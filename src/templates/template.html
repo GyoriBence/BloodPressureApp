@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+    <title>Measurements</title>
+</head>
+    <body>
+        <h1>Person's Blood Pressure Values</h1>
+        <pre>Systolic:</pre>
+        <pre>   Avarage:   {{avgsys}}</pre>
+        <pre>   Minimum:   {{minsys}}</pre>
+        <pre>   Maximum:   {{maxsys}}</pre>
+        <pre>Diastolic:</pre>
+        <pre>   Avarage:   {{avgdia}}</pre>
+        <pre>   Minimum:   {{mindia}}</pre>
+        <pre>   Maximum:   {{maxdia}}</pre>
+        {% for x in content %}
+            <p>####################</p>
+            <pre>Measurement ID:    {{x["_id"]}}</pre>
+            <pre>Measurement Type:  {{x["Type"]}}</pre>
+            <pre>Values:</pre>
+            <pre>   Systolic:       {{x["Values"]["Systolic"]}} mm Hg</pre>
+            <pre>   Diastolic:      {{x["Values"]["Diastolic"]}} mm Hg</pre>
+        {% endfor %}
+    </body>
+</html>
